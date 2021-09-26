@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">MAD</string>
+    <string-array name="type_of_the_place">Type of the place
+
+    </string-array>
+
+    <string name="name_of_the_place">Name of the Place</string>
+    <string name="city">City</string>
+</resources>
