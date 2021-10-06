@@ -1,29 +1,22 @@
-package com.example.mad;
+package com.example.madfullcrud;
 
-public class Places {
-    private String placename;
-    private String placetype;
-    private String ownername;
-    private String address;
-    private String email;
-    private String phone1;
-    private String phone2;
-    private String description;
+public class MainModel {
 
-    public Places(){
+    String placename, placetype, address, description, email, ownername, phone1, phone2, iurl;
+
+    MainModel(){
 
     }
-
-
-    public Places(String placename, String placetype, String ownername, String address, String email, String phone1, String phone2, String description) {
+    public MainModel(String placename, String placetype, String address, String description, String email, String ownername, String phone1, String phone2, String iurl) {
         this.placename = placename;
         this.placetype = placetype;
-        this.ownername = ownername;
         this.address = address;
+        this.description = description;
         this.email = email;
+        this.ownername = ownername;
         this.phone1 = phone1;
         this.phone2 = phone2;
-        this.description = description;
+        this.iurl = iurl;
     }
 
     public String getPlacename() {
@@ -42,14 +35,6 @@ public class Places {
         this.placetype = placetype;
     }
 
-    public String getOwnername() {
-        return ownername;
-    }
-
-    public void setOwnername(String ownername) {
-        this.ownername = ownername;
-    }
-
     public String getAddress() {
         return address;
     }
@@ -58,12 +43,28 @@ public class Places {
         this.address = address;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getEmail() {
         return email;
     }
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getOwnername() {
+        return ownername;
+    }
+
+    public void setOwnername(String ownername) {
+        this.ownername = ownername;
     }
 
     public String getPhone1() {
@@ -82,13 +83,11 @@ public class Places {
         this.phone2 = phone2;
     }
 
-    public String getDescription() {
-        return description;
+    public String getIurl() {
+        return iurl;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setIurl(String iurl) {
+        this.iurl = iurl;
     }
-
-
 }

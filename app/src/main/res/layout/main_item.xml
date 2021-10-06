@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardConerRadius="6dp"
+    app:cardCornerRadius="6dp"
     android:elevation="6dp"
     app:cardUseCompatPadding="true">
 
@@ -12,92 +12,126 @@
         android:layout_height="wrap_content"
         android:padding="15dp">
 
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            android:id="@+id/img1"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/place_name"
-            android:text="Name of the Place "
+            android:text="Name of the Place"
             android:textStyle="bold"
             android:textSize="15dp"
             android:textColor="#000"
-            />
+            android:layout_toRightOf="@id/img1"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/place_name"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@id/img1"
+            android:text="Email"
+            android:textColor="#000"
+            android:textSize="15dp" />
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone1"
+            android:text="Phone"
+            android:textSize="15dp"
+            android:textColor="#000"
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/email"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/place_type"
-            android:text="Place Type"
-            android:textStyle="bold"
+            android:text="place type"
             android:textSize="15dp"
             android:textColor="#000"
-            android:layout_below="@+id/place_name"
-            />
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/phone1"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/owner_name"
-            android:text="Owner name "
-            android:textStyle="bold"
+            android:id="@+id/ownername"
+            android:text="ownername"
             android:textSize="15dp"
             android:textColor="#000"
-            android:layout_below="@+id/place_type"
-            />
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/place_type"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/Address"
-            android:text="Address "
-            android:textStyle="bold"
+            android:id="@+id/address"
+            android:text="address"
             android:textSize="15dp"
             android:textColor="#000"
-            android:layout_below="@+id/owner_name"
-            />
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/ownername"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/email"
-            android:text="Email"
-            android:textStyle="bold"
+            android:id="@+id/phone2"
+            android:text="phone2"
             android:textSize="15dp"
             android:textColor="#000"
-            android:layout_below="@+id/Address"
-            />
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/address"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_phone1"
-            android:text="Mobile"
-            android:textStyle="bold"
+            android:id="@+id/description"
+            android:text="description"
             android:textSize="15dp"
             android:textColor="#000"
-            android:layout_below="@+id/email"
-            />
-
-        <TextView
+            android:layout_toRightOf="@id/img1"
+            android:layout_below="@id/phone2"
+            android:layout_marginLeft="10dp"/>
+        
+        <LinearLayout
+            android:layout_below="@id/description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_phone2"
-            android:text="Office"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:textColor="#000"
-            android:layout_below="@+id/txt_phone1"
-            />
+            android:orientation="horizontal">
+            
+            <Button
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:layout_marginRight="5dp"
+                android:id="@+id/btn_edit"/>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/txt_description"
-            android:text="Description"
-            android:textStyle="bold"
-            android:textSize="15dp"
-            android:textColor="#000"
-            android:layout_below="@+id/txt_phone2"
-            />
+            <Button
+                android:layout_width="173dp"
+                android:layout_height="wrap_content"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:layout_marginLeft="5dp"
+                android:id="@+id/btn_delete"/>
+            
+            
+        </LinearLayout>
 
     </RelativeLayout>
 
