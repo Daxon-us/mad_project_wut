@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     Button button1;
+    Button button2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +42,22 @@ public class MainActivity extends AppCompatActivity {
         txt_phone2 = findViewById(R.id.txt_phone2);
         txt_description = findViewById(R.id.txt_description);
         button1 = findViewById(R.id.button1);
+        button2 = findViewById(R.id.button2);
         placeob = new Places();
 
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Add();
+            }
+        });
+
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(MainActivity.this, placeview.class);
+                startActivity(intent);
             }
         });
     }
@@ -61,12 +73,56 @@ public class MainActivity extends AppCompatActivity {
         placeob.setPhone1(txt_phone1.getText().toString().trim());
         placeob.setPhone2(txt_phone2.getText().toString().trim());
         placeob.setDescription(txt_description.getText().toString().trim());
+        String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
 
+        if(TextUtils.isEmpty(place_name.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Please enter the place name", Toast.LENGTH_LONG).show();
+        }
 
-        fDatabase.push().setValue(placeob);
-                Toast.makeText(getApplicationContext(), "inserted", Toast.LENGTH_LONG).show();
+        else if(TextUtils.isEmpty(place_type.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Please enter the place type", Toast.LENGTH_LONG).show();
+        }
+
+        else if(TextUtils.isEmpty(owner_name.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Please enter the owner name", Toast.LENGTH_LONG).show();
+        }
+
+        else if(TextUtils.isEmpty(Address.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Please enter the Address", Toast.LENGTH_LONG).show();
+        }
+
+        else if(TextUtils.isEmpty(txt_email.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Please enter the email", Toast.LENGTH_LONG).show();
+        }
+        else if (!txt_email.getText().toString().trim().matches(emailPattern)){
+            Toast.makeText(getApplicationContext(), "Please enter a valid email address", Toast.LENGTH_LONG).show();
+        }
+
+        else if(TextUtils.isEmpty(txt_phone1.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Please enter the mobile", Toast.LENGTH_LONG).show();
+        }
+
+        else if(!(txt_phone1.getText().toString().trim().length()==10)) {
+            Toast.makeText(getApplicationContext(), "Please enter a valid mobile number contains 10 digits", Toast.LENGTH_LONG).show();
+        }
+
+        else if(TextUtils.isEmpty(txt_phone2.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Please enter the office number", Toast.LENGTH_LONG).show();
+        }
+
+        else if(!(txt_phone2.getText().toString().trim().length()==10)) {
+            Toast.makeText(getApplicationContext(), "Please enter a valid mobile number contains 10 digits", Toast.LENGTH_LONG).show();
+        }
+
+        else if(TextUtils.isEmpty(txt_description.getText().toString().trim())) {
+            Toast.makeText(getApplicationContext(), "Please enter the description", Toast.LENGTH_LONG).show();
+        }
+        else {
+            fDatabase.push().setValue(placeob); {
+                Toast.makeText(getApplicationContext(), "Successfully inserted", Toast.LENGTH_LONG).show();
 
             }
+        }
 
 
-}
+}}
