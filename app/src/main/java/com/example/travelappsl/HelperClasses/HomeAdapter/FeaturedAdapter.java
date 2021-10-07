@@ -1,4 +1,4 @@
-package com.example.madfullcrud;
+package com.example.travelappsl.HelperClasses.HomeAdapter;
 
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -15,6 +16,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.travelappsl.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -23,12 +25,11 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-import de.hdodenhof.circleimageview.CircleImageView;
-
-public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.myViewHolder> {
+public class FeaturedAdapter extends FirebaseRecyclerAdapter<FeaturedHelperClass,FeaturedAdapter.myViewHolder> {
 
     /**
      * Initialize a {@link RecyclerView.Adapter} that listens to a Firebase query. See
@@ -36,19 +37,13 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
      *
      * @param options
      */
-    public MainAdapter(@NonNull FirebaseRecyclerOptions<MainModel> options) {
+    public FeaturedAdapter(@NonNull FirebaseRecyclerOptions<FeaturedHelperClass> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull MainModel model) {
+    protected void onBindViewHolder(@NonNull myViewHolder holder, @SuppressLint("RecyclerView") int position, @NonNull FeaturedHelperClass model) {
         holder.placename.setText(model.getPlacename());
-        holder.placetype.setText(model.getPlacetype());
-        holder.ownername.setText(model.getOwnername());
-        holder.address.setText(model.getAddress());
-        holder.email.setText(model.getEmail());
-        holder.phone1.setText(model.getPhone1());
-        holder.phone2.setText(model.getPhone2());
         holder.description.setText(model.getDescription());
 
         Glide.with(holder.img.getContext())
@@ -58,9 +53,23 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
                 .error(R.drawable.common_google_signin_btn_icon_dark_normal)
                 .into(holder.img);
 
+        //view more button
+//        holder.btnViewMore.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                final DialogPlus dialogPlus = DialogPlus.newDialog(view.getContext())
+//                        .setContentHolder(new ViewHolder(R.layout.view_more_popup))
+//                        .setExpanded(true,700)
+//                        .create();
+//
+//                dialogPlus.show();
+//
+//            }
+//        });
 
-        //update code
-        holder.btnUpdate.setOnClickListener(new View.OnClickListener() {
+
+        //Update
+        holder.btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 final DialogPlus dialogPlus = DialogPlus.newDialog(holder.img.getContext())
@@ -68,7 +77,7 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
                         .setExpanded(true,1200)
                         .create();
 
-                //dialogPlus.show();
+                dialogPlus.show();
 
                 View vieww = dialogPlus.getHolderView();
 
@@ -113,12 +122,10 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
                                 });
                     }
                 });
-
-
             }
         });
 
-        //Delete code
+        //Delete
         holder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -151,32 +158,107 @@ public class MainAdapter extends FirebaseRecyclerAdapter<MainModel,MainAdapter.m
     @NonNull
     @Override
     public myViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.main_item,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.featured_card_design,parent,false);
         return new myViewHolder(view);
     }
 
     class myViewHolder extends RecyclerView.ViewHolder{
 
-        CircleImageView img;
-        TextView placename, placetype, address, description, email, ownername, phone1, phone2;
+        ImageView img;
+        TextView placename,description, email, phone1, address;
 
-        Button btnUpdate, btnDelete;
+        Button btnViewMore, btnEdit, btnDelete, btnUpdate;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            img = (CircleImageView)itemView.findViewById(R.id.img1);
-            placename=(TextView)itemView.findViewById(R.id.place_name);
-            placetype=(TextView)itemView.findViewById(R.id.place_type);
-            ownername=(TextView)itemView.findViewById(R.id.ownername);
-            address=(TextView)itemView.findViewById(R.id.address);
-            email=(TextView)itemView.findViewById(R.id.email);
-            phone1=(TextView)itemView.findViewById(R.id.phone1);
-            phone2=(TextView)itemView.findViewById(R.id.phone2);
-            description=(TextView)itemView.findViewById(R.id.description);
+            img = (ImageView)itemView.findViewById(R.id.img1);
+            placename=(TextView)itemView.findViewById(R.id.txt_placename);
+            description=(TextView)itemView.findViewById(R.id.txt_description);
+            email=(TextView)itemView.findViewById(R.id.txt_email);
+            phone1=(TextView)itemView.findViewById(R.id.txt_phone1);
+            //address=(TextView)itemView.findViewById(R.id.txt_address);
 
-            btnUpdate = (Button)itemView.findViewById(R.id.btn_edit);
+            //btnViewMore = (Button)itemView.findViewById(R.id.btnViewMore);
+            btnEdit = (Button)itemView.findViewById(R.id.btn_edit);
+            btnUpdate = (Button)itemView.findViewById(R.id.btnUpdate);
             btnDelete = (Button)itemView.findViewById(R.id.btn_delete);
+
         }
     }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//public class FeaturedAdapter extends RecyclerView.Adapter<FeaturedAdapter.FeaturedViewHolder> {
+//
+//    ArrayList<FeaturedHelperClass> featuredLocations;
+//
+//    public FeaturedAdapter(ArrayList<FeaturedHelperClass> featuredLocations) {
+//        this.featuredLocations = featuredLocations;
+//    }
+//
+//    @NonNull
+//    @Override
+//    public FeaturedViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.featured_card_design,parent,false);
+//        FeaturedViewHolder featuredViewHolder = new FeaturedViewHolder(view);
+//        return featuredViewHolder;
+//    }
+//
+//    @Override
+//    public void onBindViewHolder(@NonNull FeaturedViewHolder holder, int position) {
+//
+//        FeaturedHelperClass featuredHelperClass = featuredLocations.get(position);
+//
+//        holder.placename.setText(featuredHelperClass.getPlacename());
+//        holder.description.setText(featuredHelperClass.getDescription());
+//        holder.iurl.setImageResource(featuredHelperClass.getIurl());
+//
+//    }
+//
+//    @Override
+//    public int getItemCount() {
+//        return featuredLocations.size();
+//    }
+//
+//    public static class FeaturedViewHolder extends RecyclerView.ViewHolder{
+//
+//
+//        ImageView iurl;
+//        TextView placename, description;
+//
+//        public FeaturedViewHolder(@NonNull View itemView) {
+//            super(itemView);
+//
+//            //hooks
+//            placename = itemView.findViewById(R.id.txt_placename);
+//            description = itemView.findViewById(R.id.txt_description);
+//            iurl = itemView.findViewById(R.id.img1);
+//
+//        }
+//    }
+//
+//
+//}

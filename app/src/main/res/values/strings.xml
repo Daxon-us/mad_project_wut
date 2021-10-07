@@ -1,3 +1,10 @@
 <resources>
-    <string name="app_name">madFullCrud</string>
+    <string name="app_name">TravelAppSL</string>
+    <string name="logo_name">Sancharakaya</string>
+    <string name="slogon_name">Every travel places in Sri Lanka</string>
+    <string name="powered_by">Powered by Wut</string>
+    <string name="todo">TODO</string>
+
+    <string name="search_text">Search Place......</string>
+    <string name="hotel_txt">Hotels</string>
 </resources>

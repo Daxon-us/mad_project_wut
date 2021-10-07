@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="320dp"
+    android:layout_height="160dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="8dp"
+    android:layout_margin="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:civ_border_width="2dp"
+            app:civ_border_color="#FF000000"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Place Name"
+            android:id="@+id/txt_placename"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_toRightOf="@+id/img1"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"/>
+
+<!--        <RatingBar-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/ratings_bar"-->
+<!--            android:layout_toRightOf="@id/img1"-->
+<!--            android:layout_below="@+id/txt_placename"-->
+<!--            android:rating="3.5"-->
+<!--            style="@style/Widget.AppCompat.RatingBar.Small"-->
+<!--            android:layout_marginLeft="10dp"/>-->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/txt_description"
+            android:layout_below="@id/txt_placename"
+            android:layout_toRightOf="@id/img1"
+            android:text="Description"
+            android:layout_marginLeft="10dp"/>
+
+
+        <LinearLayout
+            android:layout_below="@id/txt_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:layout_toRightOf="@id/img1">
+
+            <Button
+                android:id="@+id/btn_edit"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_description"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/img1"
+                android:backgroundTint="@color/home_background"
+                android:minHeight="48dp"
+                android:text="Update"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_description"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_toRightOf="@id/img1"
+                android:backgroundTint="@color/home_background"
+                android:minHeight="48dp"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="11dp"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </LinearLayout>
+
+
+
+    </RelativeLayout>
+
+
+
+</androidx.cardview.widget.CardView>

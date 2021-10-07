@@ -1,13 +1,14 @@
-package com.example.madfullcrud;
+package com.example.travelappsl.HelperClasses.HomeAdapter;
 
-public class MainModel {
+public class FeaturedHelperClass {
 
     String placename, placetype, address, description, email, ownername, phone1, phone2, iurl;
 
-    MainModel(){
+    FeaturedHelperClass(){
 
     }
-    public MainModel(String placename, String placetype, String address, String description, String email, String ownername, String phone1, String phone2, String iurl) {
+
+    public FeaturedHelperClass(String placename, String placetype, String address, String description, String email, String ownername, String phone1, String phone2, String iurl) {
         this.placename = placename;
         this.placetype = placetype;
         this.address = address;
@@ -90,4 +91,36 @@ public class MainModel {
     public void setIurl(String iurl) {
         this.iurl = iurl;
     }
+    //int iurl;
+
+
+//    public FeaturedHelperClass(String placename, String description, int iurl) {
+//        this.placename = placename;
+//        this.description = description;
+//        this.iurl = iurl;
+//    }
+//
+//    public String getPlacename() {
+//        return placename;
+//    }
+//
+//    public void setPlacename(String placename) {
+//        this.placename = placename;
+//    }
+//
+//    public String getDescription() {
+//        return description;
+//    }
+//
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
+//
+//    public int getIurl() {
+//        return iurl;
+//    }
+//
+//    public void setIurl(int iurl) {
+//        this.iurl = iurl;
+//    }
 }

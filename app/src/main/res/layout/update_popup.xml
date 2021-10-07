@@ -8,10 +8,11 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:text="Update Details"
-        android:background="@color/purple_500"
+        android:background="@color/teal_200"
         android:textSize="25dp"
+        android:textStyle="bold"
         android:gravity="center"
-        android:textColor="@color/white"/>
+        android:textColor="@color/black"/>
 
     <TextView
         android:layout_width="match_parent"
@@ -19,8 +20,8 @@
         android:gravity="left"
         android:textSize="15dp"
         android:paddingLeft="10dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginBottom="1dp"
         android:text="Name"/>
 
     <EditText
@@ -29,7 +30,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:gravity="left"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:id="@+id/txt_name"/>
 
 
@@ -40,7 +41,7 @@
         android:textSize="15dp"
         android:paddingLeft="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="1dp"
         android:text="Email"/>
 
     <EditText
@@ -49,9 +50,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:gravity="left"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:id="@+id/txt_email"/>
-
 
 
     <TextView
@@ -61,7 +61,7 @@
         android:textSize="15dp"
         android:paddingLeft="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="1dp"
         android:text="Phone"/>
 
     <EditText
@@ -70,7 +70,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:gravity="left"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:id="@+id/txt_phone1"/>
 
 
@@ -176,7 +176,7 @@
         android:textSize="15dp"
         android:paddingLeft="10dp"
         android:layout_marginTop="5dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="1dp"
         android:text="Image URL"/>
 
     <EditText
@@ -185,7 +185,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:gravity="left"
-        android:textSize="15dp"
+        android:textSize="13dp"
         android:id="@+id/txt_iurl"/>
 
     <Button
@@ -197,6 +197,7 @@
         android:textSize="21dp"
         android:text="Update"
         android:textAllCaps="false"
+        android:backgroundTint="@color/teal_200"
         android:background="@drawable/rounded"
         android:gravity="center"
         android:id="@+id/btnUpdate"/>

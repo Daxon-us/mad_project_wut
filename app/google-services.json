@@ -8,35 +8,6 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1083968222015:android:eecaa3474088a5708f998a",
-        "android_client_info": {
-          "package_name": "com.example.madfullcrud"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "1083968222015-pd9nauj4h4u0mds2vnue8s3dlsr85adj.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyCkf_azhnkqHJRzOl-pMjY2K9eioqMokqQ"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "1083968222015-pd9nauj4h4u0mds2vnue8s3dlsr85adj.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
-    },
-    {
-      "client_info": {
         "mobilesdk_app_id": "1:1083968222015:android:7e83765e1228cdc98f998a",
         "android_client_info": {
           "package_name": "com.example.travelappsl"

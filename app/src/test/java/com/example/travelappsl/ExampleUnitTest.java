@@ -1,4 +1,4 @@
-package com.example.madfullcrud;
+package com.example.travelappsl;
 
 import org.junit.Test;
 
