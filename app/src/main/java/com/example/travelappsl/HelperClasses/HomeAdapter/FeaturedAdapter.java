@@ -131,7 +131,7 @@ public class FeaturedAdapter extends FirebaseRecyclerAdapter<FeaturedHelperClass
             public void onClick(View view) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(holder.placename.getContext());
                 builder.setTitle("Are you sure?");
-                builder.setMessage("Deleted data can't be Undo.");
+                builder.setMessage("Deleted data can't be Recovered.");
 
                 builder.setPositiveButton("Delete", new DialogInterface.OnClickListener() {
                     @Override
